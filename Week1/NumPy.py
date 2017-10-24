@@ -135,8 +135,46 @@ print("Again 2d array: \n",r)
 print("Getting 3-3 element",r[2, 2])
 print("Printing a range of rows and collums \n",r[3, 0:6]) ##r[rowNumber,fromelement:toelement]
 
+print("Again Printing a range of rows and collums \n",r[:2, :-2]) #[:including no of rows,:excluding no of columnsfrom these rows]
+
+print("Printing slicing from the last row's two collumns\n",r[-1, ::2])
+
+print("Printing values from the array that are greater than 15 \n ",r[r > 15])
+r[r >20] = 20
+print("Printing after new assignment \n",r)##assigning all values in the array that are greater than 20 to the value of 20
+
+#####copying arrays
+
+copy=r.copy()
+print("Coppied array \n",copy) 
 
 
+#########################################Iterating Over Arrays#############################
+
+print("Printing iterating by Row: \n")
+for row in r:
+    print(row)
+
+
+print("Printing iterating by Column: \n")
+for column in r:
+    print(column)
+
+print("Iterating by Index \n")    
+for i in range(len(r)):
+    print(r[i])
+
+
+print("Iterating over index and row \n")
+for i, row in enumerate(r):  ##enumerate -> gives us the row and te index of the row
+    print('row', i, 'is', row)  
+    
+    
+#####To iterate throgh both arrays we can use zip
+
+for i,j in zip(r,copy):
+    print(i," + ",j,"  =  ",i+j)
+      
 
 
 
